@@ -22,9 +22,13 @@ public class Main {
 			System.err.println("1 arg is required :\n\t-connectionurl  ex: jdbc:hive2://impalahost:21050/;auth=noSasl");
 			System.exit(128);
 		}
+		// Get url Connection
 		connectionUrl = args[0];
 
+		// Init Connection
 		Connection con = null;
+
+		//==== Select data from Impala Table
 		String sqlStatement = "SELECT * FROM helloworld";
 		try {
 			// Set JDBC Driver
@@ -48,6 +52,7 @@ public class Main {
 			}
 		}
 
+		//==== Insert data into Impala Table
 		sqlStatement = "INSERT INTO helloworld2 SELECT * FROM helloworld";
 		try {
 			// Set JDBC Driver
