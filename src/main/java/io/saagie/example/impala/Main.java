@@ -42,19 +42,19 @@ public class Main {
             stmt.execute(sqlStatementInvalidate);
             // Execute DROP TABLE Query
             stmt.execute(sqlStatementDrop);
-            logger.info("Drop Impala table with security : OK");
+            logger.info("Drop Impala table : OK");
             // Execute CREATE Query
             stmt.execute(sqlStatementCreate);
-            logger.info("Create Impala table with security : OK");
+            logger.info("Create Impala table : OK");
             // Execute INSERT Query
             stmt.execute(sqlStatementInsert);
-            logger.info("Insert into Impala table with security : OK");
+            logger.info("Insert into Impala table : OK");
             // Execute SELECT Query
             ResultSet rs = stmt.executeQuery(sqlStatementSelect);
             while(rs.next()) {
                 logger.info(rs.getString(1));
             }
-            logger.info("Select from Impala table with security : OK");
+            logger.info("Select from Impala table : OK");
             // Invalidate metadata to update changes
             stmt.execute(sqlStatementInvalidate);
 
